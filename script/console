@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+APP_ROOT = File.expand_path(File.join(File.dirname(__FILE__), '../'))
+require File.expand_path('../../config/environment',  __FILE__)
+
+require 'ripl'
+puts "# Telegram Bot console: \n\n"
+Ripl.start binding: binding

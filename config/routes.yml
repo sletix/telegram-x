@@ -1,0 +1,28 @@
+# This routes using in Bot::ActionRoute module
+#   and Bot::ActionRoute::*Schema classes for define steps
+
+# long-schema with array of steps( defined inside schema-class )
+"/pizza":
+  - "show_pizza_menu"
+  - "check_order"
+  - "get_payment"
+  - "waiting_order_data"
+
+# aliases:
+#   when route value starts at "/"
+"/pong": "/ping"
+
+#
+#"/cancel": "cancel_last_action"
+#
+
+#"/status": "status_message"
+
+"/ping": "echo_message"
+
+#"/nearby":
+  #- "get_customer_location"
+  #- "show_something_near"
+
+"/start": "welcome_message"
+"/help":  "help_message"

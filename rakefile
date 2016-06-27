@@ -1,0 +1,43 @@
+require File.expand_path(File.join(File.dirname(__FILE__), 'config','environment'))
+#require 'sinatra/activerecord/rake'
+require 'rake/testtask'
+
+Rake::TestTask.new(:spec) do |t|
+  t.libs = %w(spec)
+  t.warning = false
+  t.pattern = "spec/**/*_spec.rb"
+end
+
+desc 'run specs with short output with default minitest_reporter'
+task :sspec do
+  ENV['MiniReporter'] = 'default'
+  Rake::Task['spec'].invoke
+end
+
+desc 'show routes(can put to BotFather)'
+task :routes do
+  Bot::ActionRoute::Map.each do |route, action|
+    str = Array === action ? "**" : action
+    puts "#{route[1..-1]} - #{str[0..17]}#{}"
+  end
+end
+
+desc 'tunnel to dev webhook'
+task :tunnel do
+  opt = Settings["bot"]["dev_tunnel"]
+  raise "not defined dev_tunnel" unless opt
+  `ssh -R 4567:127.0.0.1:4567 #{opt["user"]}@#{opt["host"]} -N`
+end
+
+desc 'run specs with spec_reporter output'
+task :default => :spec
+
+#Rake::TestTask.new(:bench) do |t|
+  #t.libs = %w(lib test)
+  #t.pattern = 'test/**/*_benchmark.rb'
+#end
+
+
+#namespace :db do
+
+#end

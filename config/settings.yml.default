@@ -1,0 +1,35 @@
+#pg:
+  #defaults: &pgdefaults
+    #adapter: postgresql
+    #encoding: unicode
+    #username: sletix
+    #password:
+    #host: localhost
+    #pool: 5
+  #development:
+    #<<: *pgdefaults
+    #database: telegram_x_bot_dev
+  #test:
+    #<<: *pgdefaults
+    #database: telegram_x_bot_test
+  #production:
+    #<<: *pgdefaults
+    #database: telegram_x_bot_prod
+
+redis:
+  defaults: &rdefaults
+    host: localhost
+    port: 6379
+  development:
+    <<: *rdefaults
+    db: 15
+  test:
+    <<: *rdefaults
+    db: 19
+  production:
+    <<: *rdefaults
+    db: 15
+
+bot:
+  token: ""
+

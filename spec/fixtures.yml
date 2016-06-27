@@ -1,0 +1,113 @@
+updates:
+  # empty message data
+  # ----
+  message_data_empty:
+    update_id: 607285171
+    message:
+      message_id: 43
+      chat:
+        id: 62061342
+        type: private
+      date: 1466550312
+
+  # full message_data
+  # ----
+  message_data_w_cmd:
+    update_id: 607265171
+    message:
+      message_id: 403
+      from:
+        id: 62061342
+        first_name: Oleg
+        last_name: Artamonov
+        username: sletix
+      chat:
+        id: 62061342
+        first_name: Oleg
+        last_name: Artamonov
+        username: sletix
+        type: private
+      date: 1466550312
+      text: "/help"
+      entities:
+      - type: bot_command
+        offset: 0
+        length: 5
+
+  # full message_data
+  # ----
+  message_data:
+    update_id: 607265171
+    message:
+      message_id: 403
+      from:
+        id: 62061342
+        first_name: Oleg
+        last_name: Artamonov
+        username: sletix
+      chat:
+        id: 62061342
+        first_name: Oleg
+        last_name: Artamonov
+        username: sletix
+        type: private
+      date: 1466550312
+      text: "/foo"
+      entities:
+      - type: bot_command
+        offset: 0
+        length: 4
+
+  # ----
+  callback_query_data:
+    update_id: 607265198
+    callback_query:
+      id: '266551435023807680'
+      from:
+        id: 62061342
+        first_name: Oleg
+        last_name: Artamonov
+        username: sletix
+      message:
+        message_id: 428
+        from:
+          id: 229349272
+          first_name: MILIBot
+          username: mfo_mili_bot
+        chat:
+          id: 62061342
+          first_name: Oleg
+          last_name: Artamonov
+          username: sletix
+          type: private
+        date: 1466594645
+        text: Foo command
+      data: '1000'
+
+  edited_message_data:
+    update_id: 607265263
+    edited_message:
+      message_id: 523
+      from:
+        id: 62061342
+        first_name: Oleg
+        last_name: Artamonov
+        username: sletix
+      chat:
+        id: 62061342
+        first_name: Oleg
+        last_name: Artamonov
+        username: sletix
+        type: private
+      date: 1466671123
+      edit_date: 1466671354
+      text: "/help foo /bar t"
+      entities:
+      - type: bot_command
+        offset: 0
+        length: 5
+      - type: bot_command
+        offset: 10
+        length: 4
+
+

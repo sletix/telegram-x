@@ -1,0 +1,8 @@
+*pizza menu here:*
+
+<% @pizzas.each do |pizza| %>
+* <%= pizza == @selected ? "*#{pizza}*" : pizza %>
+<% end %>
+
+---
+
